@@ -3,7 +3,7 @@
 An AI-powered script generator for HCL Domino administrators, even older IBM Domino or even Lotus Notes and Domino.  
 Describe what you need in plain English and get production-ready scripts instantly - no scripting expertise required.
 
-Live demo: <[(https://kbmsg.github.io/domino-scripts/)]>
+Live demo: <https://kbmsg.github.io/domino-scripts/>
 
 **What It Does**
 
@@ -24,7 +24,7 @@ You need a free Anthropic API key to use this tool.
 
 **Running the App**
 
-**Option A - Use the hosted version** Open <https://github..com/kbmsg/domino-scripts/> in any modern browser.
+**Option A - Use the hosted version** Open <https://kbmsg.github.io/domino-scripts/> in any modern browser.
 
 **Option B - Run locally**
 
