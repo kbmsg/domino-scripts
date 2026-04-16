@@ -5,6 +5,8 @@ Describe what you need in plain English and get production-ready scripts instant
 
 Live demo: <https://kbmsg.github.io/domino-scripts/>
 
+Version #: 40 April 16, 2026
+
 **What It Does**
 
 Domino Script AI uses the Anthropic Claude API to generate complete, commented, error-handled scripts for common HCL Domino administration tasks. It supports four output languages and covers nine administration categories, from server management to DAOS archiving.
