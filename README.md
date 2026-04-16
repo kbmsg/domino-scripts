@@ -1,6 +1,6 @@
 **Domino Script AI**
 
-An AI-powered script generator for HCL Domino administrators, even older IBM Domino or even Lotus Notes and Domino.  
+An AI-powered script generator for HCL Domino administrators, even older IBM Domino, or even Lotus Notes and Domino.  
 Describe what you need in plain English and get production-ready scripts instantly - no scripting expertise required.
 
 Live demo: <https://kbmsg.github.io/domino-scripts/>
