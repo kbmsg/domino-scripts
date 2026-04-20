@@ -395,7 +395,7 @@ function saveApiKey() {
     return;
   }
   apiKey = val;
-  sessionStorage.setItem('dominoApiKey', val);
+  localStorage.setItem('dominoApiKey', val);
   status.textContent = '✓ Key saved';
   status.className = 'api-key-status ok';
   showToast('🔑 API key saved for this session');
@@ -408,7 +408,7 @@ function toggleKeyVis() {
 
 // Restore key from sessionStorage if present
 (function() {
-  const stored = sessionStorage.getItem('dominoApiKey');
+  const stored = localStorage.getItem('dominoApiKey');
   if (stored) {
     apiKey = stored;
     document.getElementById('apiKeyInput').value = stored;
