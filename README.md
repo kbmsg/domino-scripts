@@ -5,7 +5,7 @@ Describe what you need in plain English and get production-ready scripts instant
 
 Live demo: <https://kbmsg.github.io/domino-scripts/>
 
-Version #: 42 April 20, 2026
+Version #: 43 April 20, 2026
 
 **What It Does**
 
@@ -35,7 +35,7 @@ You need a free Anthropic API key to use this tool.
 
 **Entering Your API Key**
 
-At the top of the page, paste your Anthropic API key into the **API Key** field and click **Save Key**. A green confirmation badge confirms it has been accepted. The key is stored in your browser's session storage only - it is never sent anywhere except directly to Anthropic's API, and it is wiped when you close the tab.
+At the top of the page, paste your Anthropic API key into the **API Key** field and click **Save Key**. A green confirmation badge confirms it has been accepted. The key is stored in your browser's session storage only - it is never sent anywhere except directly to Anthropic's API, and it is stored locally now when you close the tab. However, if you clear your cache, you will need to replace the api key. I suggest you copy it to a text file for future usage.
 
 **Interface Overview**
 
