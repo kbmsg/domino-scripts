@@ -72,7 +72,8 @@
   .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
   .field { display: flex; flex-direction: column; gap: 5px; }
   .field label { font-size: 15px; font-weight: bold; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
-  .field select, .field input { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 8px 10px; color: var(--text); font-family: Georgia, serif; font-size: 16px; outline: none; width: 100%; -webkit-appearance: none; appearance: none; }
+  .field select, .field input { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 8px 36px 8px 10px; color: var(--text); font-family: Georgia, serif; font-size: 16px; outline: none; width: 100%; -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232a9090' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; }
+  .field input { background-image: none; padding: 8px 10px; }
   .field select:focus, .field input:focus { border-color: var(--accent); }
   .field select option, .field select optgroup { background: #fffde8; color: #2a2000; }
   .prompt-area { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 12px; color: var(--text); font-family: Georgia, serif; font-size: 17px; line-height: 1.7; width: 100%; resize: vertical; outline: none; min-height: 90px; }
