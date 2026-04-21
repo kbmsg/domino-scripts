@@ -170,7 +170,7 @@
     <div class="logo-icon">D</div>
     <div class="title-group">
       <h1>Domino Script AI</h1>
-      <p>HCL Domino Admin · Script Generator</p>
+      <p>HCL Domino Admin · Script Generator v46</p>
     </div>
     <div class="status-bar">
       <div class="status-dot"></div>
@@ -247,12 +247,19 @@
               <label>Domino Version</label>
               <select id="dominoVer">
                 <optgroup label="HCL Domino 14.x">
-                  <option>HCL Domino 14.5</option>
+                  <option>HCL Domino 14.5.1</option>
+                  <option selected>HCL Domino 14.5</option>
+                  <option>HCL Domino 14.0 FP5</option>
+                  <option>HCL Domino 14.0 FP4</option>
+                  <option>HCL Domino 14.0 FP3</option>
                   <option>HCL Domino 14.0 FP2</option>
                   <option>HCL Domino 14.0 FP1</option>
-                  <option selected>HCL Domino 14.0</option>
+                  <option>HCL Domino 14.0</option>
                 </optgroup>
                 <optgroup label="HCL Domino 12.x">
+                  <option>HCL Domino 12.0.2 FP7</option>
+                  <option>HCL Domino 12.0.2 FP6</option>
+                  <option>HCL Domino 12.0.2 FP5</option>
                   <option>HCL Domino 12.0.2 FP4</option>
                   <option>HCL Domino 12.0.2 FP3</option>
                   <option>HCL Domino 12.0.2 FP2</option>
@@ -594,7 +601,7 @@ const templates = {
   deadmail: { cat:'Mail & Routing', prompt:'Delete all dead mail messages from mail.box that are older than 7 days and log the count of removed messages', lang:'Domino Console Commands' },
   acldump: { cat:'Security & ACL', prompt:'Enumerate all databases on the server and dump each database ACL (name, level, flags) to a CSV file', lang:'LotusScript' },
   repl: { cat:'Replication', prompt:'Force a push replication of all databases on the local server to a named replica server and report any errors', lang:'Domino Console Commands' },
-  useroff: { cat:'User & Directory', prompt:'Offboard users selected from a view in names.nsf. Do not hardcode any user name. Open names.nsf, prompt the admin to select one or more Person documents from the People view, then for each selected person do ALL of the following steps in order:\n1. Remove them from every group document in the Groups view of names.nsf by scanning all groups and removing the user from the Members field.\n2. Prefix ONLY the filename portion of their MailFile field with EXIT-, leaving the folder path completely unchanged. For example: mail\\jsmith.nsf must become mail\\EXIT-jsmith.nsf. Do NOT touch the folder path, do NOT change the file extension. Extract the filename by finding the last backslash in the path and only prepend EXIT- to the part after it.\n3. Send a confirmation email to the current Notes user (the admin running the script) listing every action taken for each offboarded user, using NotesDocument with SendTo set to the session username.\n\nScript structure rules that MUST be followed:\n- Every If must have a matching End If\n- Every While must have a matching Wend\n- Every For must have a matching Next\n- Every With must have a matching End With\n- Every Sub must have a matching End Sub\n- Every Function must have a matching End Function\n- Use On Error GoTo with a named error label and Resume Next after handling\n- Write the COMPLETE script from start to finish with no placeholders, no truncation, and no comments saying "add code here"', lang:'LotusScript' },
+  useroff: { cat:'User & Directory', prompt:'Offboard users selected from a view in names.nsf. Do not hardcode any user name. Open names.nsf, prompt the admin to select one or more Person documents from the People view, then for each selected person do ALL of the following steps in order:\n1. Remove them from every group document in the Groups view of names.nsf by scanning all groups and removing the user from the Members field.\n2. Copy the person document to a defined backup names.nsf. Ask for the name and location of this copy so you put it in the right place.\n3. Add the user to a Deny Access group that already exists on the Domino server.\n4. Prefix ONLY the filename portion of their MailFile field with X-, leaving the folder path completely unchanged. For example: mail\\jsmith.nsf must become mail\\X-jsmith.nsf. Do NOT touch the folder path, do NOT change the file extension. Extract the filename by finding the last backslash in the path and only prepend EXIT- to the part after it.\n5. Remove the person document from the primary names.nsf.\n6. Send a confirmation email to the current Notes user (the admin running the script) listing every action taken for each offboarded user, using NotesDocument with SendTo set to the session username.\n\nScript structure rules that MUST be followed:\n- Every If must have a matching End If\n- Every While must have a matching Wend\n- Every For must have a matching Next\n- Every With must have a matching End With\n- Every Sub must have a matching End Sub\n- Every Function must have a matching End Function\n- Use On Error GoTo with a named error label and Resume Next after handling\n- Write the COMPLETE script from start to finish with no placeholders, no truncation, and no comments saying "add code here"', lang:'LotusScript' },
   certexp: { cat:'Security & ACL', prompt:'Check all ID certificates in the Domino Directory that expire within the next 60 days and generate a report with user name, certifier, and expiry date', lang:'LotusScript' },
   quota: { cat:'Database Admin', prompt:'Set a 2GB quota and 1.8GB warning threshold on all mail databases in the mail directory for users whose current mail file exceeds 1.5GB', lang:'LotusScript' },
   logparse: { cat:'Performance & Monitoring', prompt:'Parse the notes.log for ERROR and FAULT entries from the last 24 hours, group them by type, count occurrences, and output a summary report', lang:'LotusScript' }
