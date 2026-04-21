@@ -812,7 +812,12 @@ function showToast(msg) {
 document.getElementById('userPrompt').addEventListener('keydown', e => {
   if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') generateScript();
 });
-window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('DOMContentLoaded', function() {
+  localStorage.setItem('test', 'hello');
+  const t = localStorage.getItem('test');
+  console.log('localStorage test:', t);
+  init();
+});
 updateCharCount();
 </script>
 </body>
