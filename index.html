@@ -424,18 +424,18 @@ let servers = [];
 let savedScripts = [];
 
 // ── Storage helpers ──────────────────────────────────────
-async function storageGet(key) {
+function storageGet(key) {
   try { const r = localStorage.getItem(key); return r ? JSON.parse(r.value) : null; }
   catch { return null; }
 }
-async function storageSet(key, val) {
+function storageSet(key, val) {
   try { localStorage.setItem(key, JSON.stringify(val)); } catch {}
 }
 
 // ── Init ─────────────────────────────────────────────────
-async function init() {
-  servers = await storageGet('servers') || [];
-  savedScripts = await storageGet('savedScripts') || [];
+function init() {
+  servers = storageGet('dominoServers') || [];
+  savedScripts = storageGet('dominoScripts') || [];
   renderServers();
   renderSavedScripts();
 }
@@ -481,7 +481,7 @@ async function addServer() {
   const name = inp.value.trim();
   if (!name || servers.includes(name)) { inp.focus(); return; }
   servers.push(name);
-  await storageSet('servers', servers);
+  storageSet('dominoServers', servers);
   inp.value = '';
   renderServers();
   document.getElementById('serverSelect').value = name;
@@ -490,7 +490,7 @@ async function addServer() {
 
 async function deleteServer(i) {
   servers.splice(i, 1);
-  await storageSet('servers', servers);
+  storageSet('dominoServers', servers);
   renderServers();
 }
 
@@ -545,7 +545,7 @@ async function saveToLibrary() {
   const date = new Date().toLocaleDateString('en-GB', { day:'2-digit', month:'short', year:'numeric' });
 
   savedScripts.push({ title, lang, server, date, code: text, explain: document.getElementById('explainText').textContent });
-  await storageSet('savedScripts', savedScripts);
+  storageSet('dominoScripts', savedScripts);
   renderSavedScripts();
   showToast('⭐ Script saved to library');
 }
@@ -576,7 +576,7 @@ function loadSaved(i) {
 
 async function deleteSaved(i) {
   savedScripts.splice(i, 1);
-  await storageSet('savedScripts', savedScripts);
+  storageSet('dominoScripts', savedScripts);
   renderSavedScripts();
   showToast('Script deleted');
 }
@@ -812,7 +812,7 @@ function showToast(msg) {
 document.getElementById('userPrompt').addEventListener('keydown', e => {
   if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') generateScript();
 });
-
+window.addEventListener('DOMContentLoaded', init);
 updateCharCount();
 </script>
 </body>
