@@ -315,6 +315,7 @@
           </div>
 
           <div class="action-row">
+            <button class="clear-btn" onclick="debugStorage()">🔍 Debug Storage</button>
             <button class="gen-btn" id="genBtn" onclick="generateScript()">⚡ Generate Script</button>
             <button class="clear-btn" onclick="clearAll()">Clear</button>
             <span class="char-count" id="charCount">0 / 500</span>
@@ -433,6 +434,17 @@ function storageSet(key, val) {
   try { localStorage.setItem(key, JSON.stringify(val)); } catch {}
 }
 
+  function debugStorage() {
+  console.log('--- STORAGE DEBUG ---');
+  console.log('servers variable:', servers);
+  console.log('savedScripts variable:', savedScripts);
+  console.log('localStorage dominoServers:', localStorage.getItem('dominoServers'));
+  console.log('localStorage dominoScripts:', localStorage.getItem('dominoScripts'));
+  console.log('localStorage servers:', localStorage.getItem('servers'));
+  console.log('localStorage savedScripts:', localStorage.getItem('savedScripts'));
+  alert('Check browser console (F12) for storage debug info');
+}
+  
 // ── Init ─────────────────────────────────────────────────
 function init() {
   servers = storageGet('dominoServers') || storageGet('servers') || [];
