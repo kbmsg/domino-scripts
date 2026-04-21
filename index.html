@@ -825,11 +825,12 @@ function showToast(msg) {
 document.getElementById('userPrompt').addEventListener('keydown', e => {
   if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') generateScript();
 });
-window.addEventListener('DOMContentLoaded', function() {
-  localStorage.setItem('test', 'hello');
-  const t = localStorage.getItem('test');
-  console.log('localStorage test:', t);
-  init();
+window.onload = function() {
+  servers = storageGet('dominoServers') || storageGet('servers') || [];
+  savedScripts = storageGet('dominoScripts') || storageGet('savedScripts') || [];
+  renderServers();
+  renderSavedScripts();
+};
 });
 updateCharCount();
 </script>
