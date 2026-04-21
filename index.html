@@ -425,11 +425,11 @@ let savedScripts = [];
 
 // ── Storage helpers ──────────────────────────────────────
 async function storageGet(key) {
-  try { const r = await window.storage.get(key); return r ? JSON.parse(r.value) : null; }
+  try { const r = localStorage.getItem(key); return r ? JSON.parse(r.value) : null; }
   catch { return null; }
 }
 async function storageSet(key, val) {
-  try { await window.storage.set(key, JSON.stringify(val)); } catch {}
+  try { localStorage.setItem(key, JSON.stringify(val)); } catch {}
 }
 
 // ── Init ─────────────────────────────────────────────────
