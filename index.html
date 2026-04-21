@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Domino AI Script Generator</title>
-<link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
+<!link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #3380C2;
@@ -361,6 +361,7 @@
         <div class="panel-body" style="padding:8px;">
           <ul class="server-list" id="serverList"></ul>
           <div class="add-server-row">
+            <label for="newServerInput" style="display:none">Server name</label>
             <input type="text" id="newServerInput" placeholder="MAIL01/ACME" maxlength="80" />
             <button onclick="addServer()">Add</button>
           </div>
@@ -434,8 +435,8 @@ function storageSet(key, val) {
 
 // ── Init ─────────────────────────────────────────────────
 function init() {
-  servers = storageGet('dominoServers') || [];
-  savedScripts = storageGet('dominoScripts') || [];
+  servers = storageGet('dominoServers') || storageGet('servers') || [];
+  savedScripts = storageGet('dominoScripts') || storageGet('savedScripts') || [];
   renderServers();
   renderSavedScripts();
 }
