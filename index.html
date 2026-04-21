@@ -170,7 +170,7 @@
     <div class="logo-icon">D</div>
     <div class="title-group">
       <h1>Domino Script AI</h1>
-      <p>HCL Domino Admin · Script Generator v46</p>
+      <p>HCL Domino Admin · Script Generator v47</p>
     </div>
     <div class="status-bar">
       <div class="status-dot"></div>
@@ -581,9 +581,9 @@ function loadSaved(i) {
   showToast('Script loaded');
 }
 
-async function deleteSaved(i) {
+function deleteSaved(i) {
   savedScripts.splice(i, 1);
-  await storageSet('savedScripts', savedScripts);
+  localStorage.setItem('dominoScripts', JSON.stringify(savedScripts));
   renderSavedScripts();
   showToast('Script deleted');
 }
