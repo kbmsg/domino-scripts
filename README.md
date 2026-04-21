@@ -3,7 +3,7 @@
 An AI-powered script generator for HCL Domino administrators.
 Describe what you need in plain English and get production-ready scripts instantly - no scripting expertise required.
 
-Live demo: <https://kbmsg.github.io/domino-scripts/>
+Live code for you to use: <https://kbmsg.github.io/domino-scripts/>
 
 Version #: 51 April 21, 2026
 
