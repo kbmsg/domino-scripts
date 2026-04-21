@@ -170,7 +170,7 @@
     <div class="logo-icon">D</div>
     <div class="title-group">
       <h1>Domino Script AI</h1>
-      <p>HCL Domino Admin · Script Generator v47</p>
+      <p>HCL Domino Admin · Script Generator v48</p>
     </div>
     <div class="status-bar">
       <div class="status-dot"></div>
@@ -395,10 +395,10 @@ function saveApiKey() {
     return;
   }
   apiKey = val;
-  sessionStorage.setItem('dominoApiKey', val);
+  localStorage.setItem('dominoApiKey', val);
   status.textContent = '✓ Key saved';
   status.className = 'api-key-status ok';
-  showToast('🔑 API key saved for this session');
+  showToast('🔑 API key saved');
 }
 
 function toggleKeyVis() {
@@ -408,7 +408,7 @@ function toggleKeyVis() {
 
 // Restore key from sessionStorage if present
 (function() {
-  const stored = sessionStorage.getItem('dominoApiKey');
+  const stored = localStorage.getItem('dominoApiKey');
   if (stored) {
     apiKey = stored;
     document.getElementById('apiKeyInput').value = stored;
