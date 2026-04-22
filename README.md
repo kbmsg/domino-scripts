@@ -5,11 +5,11 @@ Describe what you need in plain English and get production-ready scripts instant
 
 Live code for you to use: <https://kbmsg.github.io/domino-scripts/>
 
-Version #: 51 April 21, 2026
+Version #: 50 April 21, 2026 now with Ollama and Claude
 
 **What It Does**
 
-Domino Script AI uses the Anthropic Claude API to generate complete, commented, error-handled scripts for common HCL Domino administration tasks. It supports four output languages and covers nine administration categories, from server management to DAOS archiving.
+Domino Script AI uses the Anthropic Claude API or Ollama, to generate complete, commented, error-handled scripts for common HCL Domino administration tasks. It supports four output languages and covers nine administration categories, from server management to DAOS archiving.
 
 Scripts are generated fresh on demand, tailored to your selected Domino version, target server, and task description.
 
@@ -17,12 +17,22 @@ Scripts are generated fresh on demand, tailored to your selected Domino version,
 
 **Prerequisites**
 
-You need a free Anthropic API key to use this tool.
-
+You need a free Anthropic API key to use this tool or Ollama installation.
+**Anthropic:**
 - Go to [console.anthropic.com](https://console.anthropic.com/)
 - Sign up or log in
 - Navigate to **API Keys** and create a new key
 - Copy the key - it starts with sk-ant-
+
+**Ollama:**
+
+To use Ollama, users need to:
+Install Ollama from ollama.com
+Run OLLAMA_ORIGINS=* ollama serve in their terminal
+Pull a model with ollama pull llama3
+Switch the toggle to Ollama, enter the model name, click Save
+Ollama mode — enter your local Ollama URL (defaults to http://localhost:11434) and the model name (e.g. llama3, mistral, codellama)
+All settings persist across refreshes — provider choice, Ollama URL, and model name all saved to localStorage
 
 **Running the App** (Tested with v9 and newer, but should work for earlier versions as well)
 
