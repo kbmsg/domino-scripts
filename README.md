@@ -5,7 +5,7 @@ Describe what you need in plain English and get production-ready scripts instant
 
 Live code for you to use: <https://kbmsg.github.io/domino-scripts/>
 
-Version #: 60 April 21, 2026 now with Ollama and Claude AI options
+Version #: 64 April 21, 2026 now with Ollama and Claude AI options
 
 **What It Does**
 
