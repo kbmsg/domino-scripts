@@ -17,7 +17,8 @@ Scripts are generated fresh on demand, tailored to your selected Domino version,
 
 **Prerequisites**
 
-You need a free Anthropic API key to use this tool or Ollama installation.
+You need a free Anthropic API key to use this tool or Ollama installed.
+
 **Anthropic:**
 - Go to [console.anthropic.com](https://console.anthropic.com/)
 - Sign up or log in
