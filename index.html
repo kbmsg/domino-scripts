@@ -213,7 +213,7 @@
   <header>
     <div class="logo-icon">D</div>
     <div class="title-group">
-      <h1>Domino Script AI <span style="font-size:0.5em;font-weight:normal;opacity:0.7;vertical-align:middle;">v67 Ollama Working testing openrouter</span></h1>
+      <h1>Domino Script AI <span style="font-size:0.5em;font-weight:normal;opacity:0.7;vertical-align:middle;">v68 Ollama Working testing openrouter</span></h1>
       <p>HCL Domino Admin · Script Generator</p>
     </div>
     <div class="status-bar">
@@ -420,6 +420,22 @@
           <div class="saved-empty" id="savedEmpty">No saved scripts yet.<br>Generate a script and click ⭐ Save to Library.</div>
         </div>
       </div>
+
+      <div class="panel">
+        <div class="panel-header">Output Type</div>
+        <div class="panel-body">
+          <div class="field">
+            <label>Script Language</label>
+            <select id="scriptLang" onchange="updateLangTag(this.value)">
+              <option value="LotusScript">LotusScript</option>
+              <option value="Domino Console Commands">Console Commands</option>
+              <option value="Java (Notes API)">Java (Notes API)</option>
+              <option value="Formula Language">Formula Language</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
     </aside>
 
   </div>
