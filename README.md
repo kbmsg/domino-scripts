@@ -5,7 +5,7 @@ Describe what you need in plain English and get production-ready scripts instant
 
 Live code for you to use: <https://kbmsg.github.io/domino-scripts/>
 
-Version #: 66 April 23, 2026 now with Ollama and Claude AI options WORKING!z
+Version #: 67 April 23, 2026 now with Ollama and Claude AI options WORKING! OpenRouter in testing
 
 **What It Does**
 
@@ -17,7 +17,7 @@ Scripts are generated fresh on demand, tailored to your selected Domino version,
 
 **Prerequisites**
 
-You need a free Anthropic API key to use this tool or Ollama installed.
+You need a free Anthropic API key to use this tool or Ollama installed or Openrouter(coming soon)
 
 **Anthropic:**
 - Go to [console.anthropic.com](https://console.anthropic.com/)
