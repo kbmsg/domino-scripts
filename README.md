@@ -5,13 +5,14 @@ Describe what you need in plain English and get production-ready scripts instant
 
 Live code for you to use: <https://kbmsg.github.io/domino-scripts/>
 
-Version #: 67 April 23, 2026 now with Ollama and Claude AI options WORKING! OpenRouter in testing
+Version #: 80 May 19, 2026 now with Ollama, OpenRouter, Claude AI options work. DRAPI now testing.
 
 **What It Does**
 
-Domino Script AI uses the Anthropic Claude API or Ollama, to generate complete, commented, error-handled scripts for common HCL Domino administration tasks. It supports four output languages and covers nine administration categories, from server management to DAOS archiving.
+Domino Script AI uses the Anthropic Claude API, OpenRouter or Ollama, to generate complete, commented, error-handled scripts for common HCL Domino administration tasks. It supports four output languages and covers nine administration categories, from server management to DAOS archiving.
 
 Scripts are generated fresh on demand, tailored to your selected Domino version, target server, and task description.
+ANd now includes the DRAPI option so you can save your scripts directly to your environment in an .NSF file. Details below.
 
 **Getting Started**
 
@@ -116,7 +117,7 @@ Good examples:
 
 Press **Ctrl+Enter** (or **Cmd+Enter** on Mac) to generate without reaching for the mouse.
 
-**Generate Script** - Sends your request to the Claude API. Generation typically takes 5-15 seconds depending on script complexity.
+**Generate Script** - Sends your request to the Claude API. Generation typically takes 5-15 seconds, depending on script complexity.
 
 **Clear** - Resets the prompt field and output area.
 
@@ -130,6 +131,9 @@ Displays the generated script with syntax highlighting. A plain-English explanat
 
 **Save to Library** - Saves the script to your local script library (right sidebar) so you can reload it later without regenerating.
 
+**Save to Domino** - Saves the script to your HCL Domino server script library so you can share among your team and have documentation as well.
+Download the scripts.nsf template and edit the ACL accordingly. You will need your DRAPI up and running.
+
 **Right Sidebar**
 
 **My Servers**
@@ -139,6 +143,10 @@ Add your Domino server names here (e.g. MAIL01/ACME). Saved servers appear in th
 **Saved Scripts**
 
 Scripts saved via the **Save to Library** button appear here, newest first. Each entry shows the script title (derived from your prompt), language, server, and date saved. Click any entry to reload it into the output panel. Click **✕** to delete it. Saved scripts persist in browser storage across sessions.
+
+**Save to Domino**
+
+Provide your DRAPI server information, a login and password, the .nsf, and a scope name.
 
 **Important Notes**
 
