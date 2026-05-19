@@ -5,7 +5,7 @@ Describe what you need in plain English and get production-ready scripts instant
 
 Live code for you to use: [https://kbmsg.github.io/domino-scripts/](https://kbmsg.github.io/domino-scripts/)
 
-Version #: 81 May 19, 2026 — now with Ollama, OpenRouter, and Claude AI options. DRAPI save to Domino is now available.
+Version #: 82 May 19, 2026 — now with Ollama, OpenRouter, and Claude AI options. DRAPI save to Domino is now available.
 
 ---
 
