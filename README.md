@@ -119,7 +119,7 @@ Good examples:
 
 Press **Ctrl+Enter** (or **Cmd+Enter** on Mac) to generate without reaching for the mouse.
 
-**Generate Script** — Sends your request to the selected AI provider. Generation typically takes 5–15 seconds depending on script complexity.
+**Generate Script** — Sends your request to the selected AI provider. Generation typically takes 5–15 seconds, depending on script complexity.
 
 **Clear** — Resets the prompt field and output area.
 
@@ -182,7 +182,7 @@ Generated scripts can be saved directly to an HCL Domino document library databa
 
 ### Setting Up the DRAPI Schema and Scope
 
-**1. Verify DRAPI is running** — on your Domino server console type `show tasks`. You should see `restapi` listed. If not, run `load restapi`.
+**1. Verify DRAPI is running** — on your Domino server console, type `show tasks`. You should see `restapi` listed. If not, run `load restapi`.
 
 **2. Open the Admin UI** at `https://yourserver:8880` and log in with your Domino credentials.
 
@@ -190,17 +190,30 @@ Generated scripts can be saved directly to an HCL Domino document library databa
 
 **4. Create a Scope** — click Scopes → Add Scope. Set the scope name to `scripts` (lowercase), link it to the `scripts` schema, set Maximum Access to Editor, and make sure Active is ticked.
 
-**5. Configure CORS** — in your Domino data directory open `keepconfig.d\cors.json` and make sure it contains valid regex entries. Since DRAPI v1.1.3, CORS uses Java Regular Expressions:
+**5. Configure CORS** — in your Domino data directory, open `keepconfig.d\cors.json` and make sure it contains valid regex entries. Since DRAPI v1.1.3, CORS uses Java Regular Expressions:
 
 ```json
 {
   "CORS": {
     "^https:\\/\\/kbmsg\\.github\\.io$": true,
-    "^https?:\\/\\/keithbrooks\\.com(?:\\:\\d+)?$": true,
     "^https?:\\/\\/localhost(?:\\:\\d+)?$": true
   }
 }
 ```
+
+If you are hosting the app on your own domain instead of GitHub Pages, replace the first entry with your domain. For example for `mycompany.com`:
+
+```json
+{
+  "CORS": {
+    "^https:\\/\\/mycompany\\.com(?:\\:\\d+)?$": true,
+    "^https?:\\/\\/.*\\.mycompany\\.com(?:\\:\\d+)?$": true,
+    "^https?:\\/\\/localhost(?:\\:\\d+)?$": true
+  }
+}
+```
+
+The pattern `.*\\.mycompany\\.com` covers all subdomains. The `(?:\\:\\d+)?` part makes the port number optional. Note that dots must be escaped as `\\.` and forward slashes as `\\/` inside JSON regex strings.
 
 After saving, restart DRAPI:
 ```
