@@ -22,6 +22,7 @@ Scripts are generated fresh on demand, tailored to your selected Domino version,
 ### Prerequisites
 
 You need a free Anthropic API key, Ollama installed locally, or an OpenRouter account to use this tool.
+You should also download the scripts.nsf file. Add the server and Admin name/groups to the ACL and place it on your server so the DRAPI can connect.
 
 **Anthropic:**
 - Go to [console.anthropic.com](https://console.anthropic.com/)
